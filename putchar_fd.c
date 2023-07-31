@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Prints a char and increase the return of ft_printf.*/
+
 #include "lib_pf.h"
 
 void	putchar_pf(int	c, size_t *len)

@@ -10,8 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*This program imitates the function printf using variadic functions.*/
+
 #include "lib_pf.h"
 
+/*Prints and increases the return of ft_printf according
+ * to the format.*/
 void	format_pf(va_list args, char *str, size_t *len)
 {
 	if (*str == 'c')
@@ -19,11 +23,9 @@ void	format_pf(va_list args, char *str, size_t *len)
 	else if (*str == 's')
 		putstr_pf(va_arg(args, char *), len);
 	else if (*str == 'p')
-		p
-	else if (*str == 'd')
+		putptr_pf(va_arg(args, void *), len);
+	else if (*str == 'd' || *str == 'i')
 		d
-	else if (*str == 'i')
-		i
 	else if (*str == 'u')
 		u
 	else if (*str == 'x' || *str == 'X')
@@ -32,6 +34,8 @@ void	format_pf(va_list args, char *str, size_t *len)
 		%
 }
 
+/*The main body of the program, prints the string called str.
+ * Returns the number of chars that are print.*/
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;

@@ -10,9 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Prints a str and increase the return of ft_printf, both, using putchar_fd.*/
+
 #include "lib_pf.h"
 
-void	putstr_pf()
+void	putstr_pf(char *str, size_t *len)
 {
+    size_t  i;
 
+    i = 0;
+    if (!str)
+        str = "(null)";
+    while (str[i] != '\0')
+    {
+        putchar_fd(str[i], len);
+        i++;
+    }
 }
