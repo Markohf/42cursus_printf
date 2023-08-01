@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux1_pf.c                                          :+:      :+:    :+:   */
+/*   base_pf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marco-fe <marco-fe@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,55 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Prints an unsigned long in a given base, increase the return of ft_printf.*/
+
 #include "lib_pf.h"
 
-size_t	ft_strlen(const char *s)
+void	base_pf(unsigned long ptr_address, char *base, int base_len, size_t *len)
 {
-	size_t	i;
+	char	c;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*p_b;
-
-	i = 0;
-	p_b = s;
-	while (i < n)
+	if (ptr_address < base_len)
 	{
-		p_b[i] = '\0';
-		i++;
+		c = base[ptr_address];
+		putchar_pf(c, len);
 	}
-}
-
-void	*ft_calloc(unsigned int count, unsigned int size)
-{
-	unsigned int	tot;
-	void			*buff;
-
-	tot = count * size;
-	buff = malloc(tot);
-	if (!buff)
-		return (NULL);
-	ft_bzero(buff, tot);
-	return (buff);
-}
-
-char    *aux1_pf(unsigned long ptr_address, char *base)
-{
-    char    *str;
-
-    str = ft_calloc(ft_strlen(base) + 1, sizeof (char));
-    if (!str)
-        return (NULL);
-    while ()
-    {
-
-    }
-    return (str);
+	else
+	{
+		base_pf(ptr_address / base_len, base, base_len, len);
+		base_pf(ptr_address % base_len, base, base_len, len);
+	}
 }

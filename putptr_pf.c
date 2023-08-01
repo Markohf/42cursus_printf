@@ -17,11 +17,8 @@
 void    putptr_pf(void *ptr, size_t *len)
 {
     unsigned long   ptr_address;
-    char            *str;
 
     ptr_address = (unsigned long)ptr;
     putstr_pf("0x", len);
-    str = aux1_pf(ptr_address, "0123456789abcdef");
-    putstr_pf(str, len);
-    free(str);
+    base_pf(ptr_address, "0123456789abcdef", 16, len);
 }
