@@ -25,13 +25,13 @@ void	format_pf(va_list args, char *str, size_t *len)
 	else if (*str == 'p')
 		putptr_pf(va_arg(args, void *), len);
 	else if (*str == 'd' || *str == 'i')
-		d
+		putint_pf(va_arg(args, int), len);
 	else if (*str == 'u')
 		u
 	else if (*str == 'x' || *str == 'X')
 		xX
 	else if (*str == '%')
-		%
+		putchar_pf('%', len);
 }
 
 /*The main body of the program, prints the string called str.

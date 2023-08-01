@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putptr_pf.c                                        :+:      :+:    :+:   */
+/*   putint_pf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marco-fe <marco_fe@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,18 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Prints a pointer in hexadecimal, increase the return of ft_printf.*/
+/*Prints an int, increase the return of ft_printf.*/
 
 #include "lib_pf.h"
 
-void    putptr_pf(void *ptr, size_t *len)
+void    putint_pf(int num, size_t *len)
 {
-    unsigned long   ptr_address;
-    char            *str;
-
-    ptr_address = (unsigned long)ptr;
-    putstr_pf("0x", len);
-    str = aux1_pf(ptr_address, "0123456789abcdef");
-    putstr_pf(str, len);
-    free(str);
+    if (num == -2147483648)
+		putstr_pf("-2147483648", len);
+	else
+	{	
+        if (num < 0)
+        {
+            num = -num;
+            putchar_pf('-', len);
+        }
+        if (num < 10)
+            putchar_pf(num + '0', len);
+        else
+        {
+            putint_pf(num / 10, len);
+            putint_pf(num % 10, len);
+        }
+    }
 }
