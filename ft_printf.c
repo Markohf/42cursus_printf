@@ -27,9 +27,9 @@ void	format_pf(va_list args, char *str, size_t *len)
 	else if (*str == 'd' || *str == 'i')
 		putint_pf(va_arg(args, int), len);
 	else if (*str == 'u')
-		u
+		putbdec_pf(va_arg(args, unsigned int), len);
 	else if (*str == 'x' || *str == 'X')
-		xX
+		putbhex_pf(va_arg(args, unsigned int), str, len);
 	else if (*str == '%')
 		putchar_pf('%', len);
 }

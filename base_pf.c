@@ -14,18 +14,18 @@
 
 #include "lib_pf.h"
 
-void	base_pf(unsigned long ptr_address, char *base, int base_len, size_t *len)
+void	base_pf(unsigned long val, char *base, int base_len, size_t *len)
 {
 	char	c;
 
-	if (ptr_address < base_len)
+	if (val < base_len)
 	{
-		c = base[ptr_address];
+		c = base[val];
 		putchar_pf(c, len);
 	}
 	else
 	{
-		base_pf(ptr_address / base_len, base, base_len, len);
-		base_pf(ptr_address % base_len, base, base_len, len);
+		base_pf(val / base_len, base, base_len, len);
+		base_pf(val % base_len, base, base_len, len);
 	}
 }
