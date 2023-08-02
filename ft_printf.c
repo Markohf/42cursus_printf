@@ -6,31 +6,31 @@
 /*   By: marco-fe <marco-fe@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:48:11 by marco-fe          #+#    #+#             */
-/*   Updated: 2023/07/28 20:04:11 by marco-fe         ###   ########.fr       */
+/*   Updated: 2023/08/02 12:37:22 by marco-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*This program imitates the function printf using variadic functions.*/
 
-#include "lib_pf.h"
+#include "ft_printf.h"
 
 /*Prints and increases the return of ft_printf according
  * to the format.*/
-void	format_pf(va_list args, char *str, size_t *len)
+void	format_pf(va_list args, char ind, size_t *len)
 {
-	if (*str == 'c')
+	if (ind == 'c')
 		putchar_pf(va_arg(args, int), len);
-	else if (*str == 's')
+	else if (ind == 's')
 		putstr_pf(va_arg(args, char *), len);
-	else if (*str == 'p')
+	else if (ind == 'p')
 		putptr_pf(va_arg(args, void *), len);
-	else if (*str == 'd' || *str == 'i')
+	else if (ind == 'd' || ind == 'i')
 		putint_pf(va_arg(args, int), len);
-	else if (*str == 'u')
+	else if (ind == 'u')
 		putbdec_pf(va_arg(args, unsigned int), len);
-	else if (*str == 'x' || *str == 'X')
-		putbhex_pf(va_arg(args, unsigned int), str, len);
-	else if (*str == '%')
+	else if (ind == 'x' || ind == 'X')
+		putbhex_pf(va_arg(args, unsigned int), ind, len);
+	else if (ind == '%')
 		putchar_pf('%', len);
 }
 
@@ -50,7 +50,7 @@ int	ft_printf(char const *str, ...)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%' && str[i + 1] != '\0')
-			format_pf(args, (char *)str[++i], &len);
+			format_pf(args, str[++i], &len);
 		else
 			putchar_pf(str[i], &len);
 		i++;
