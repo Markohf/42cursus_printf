@@ -6,7 +6,7 @@
 /*   By: marco-fe <marco-fe@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:48:11 by marco-fe          #+#    #+#             */
-/*   Updated: 2023/08/02 13:15:05 by marco-fe         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:29:26 by marco-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,32 +62,47 @@ int	ft_printf(char const *str, ...)
 int	main(void)
 {
 	char	*str = "Hola";
+	int		val1 = 0;
+	int		val2 = 0;
 
-	printf("Real char:\t%c\n", 'c');
-	ft_printf("marco char:\t%c\n", 'c');
-	printf("Real str:\t%s\n", "hola");
-	ft_printf("marco str:\t%s\n", "hola");
-	printf("Real ptr:\t%p\n", str);
-	ft_printf("marco ptr:\t%p\n", str);
-	printf("Real +d:\t%d\n", 123);
-	ft_printf("marco +d:\t%d\n", 123);
-	printf("Real -d:\t%d\n", -123);
-	ft_printf("marco -d:\t%d\n", -123);
-	printf("Real +i:\t%i\n", 123);
-	ft_printf("marco +i:\t%i\n", 123);
-	printf("Real -i:\t%i\n", -123);
-	ft_printf("marco -i:\t%i\n", -123);
-	printf("Real +u:\t%u\n", 123);
-	ft_printf("marco +u:\t%u\n", 123);
-	printf("Real -u:\t%u\n", -123);
-	ft_printf("marco -u:\t%u\n", -123);
-	printf("Real hex:\t%x\n", 123);
-	ft_printf("marco hex:\t%x\n", 123);
-	printf("Real HEX:\t%X\n", 123);
-	ft_printf("marco HEX:\t%X\n", 123);
-	printf("Real por:\t%%\n");
-	ft_printf("marco por:\t%%\n");
-	printf("Real comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
-	ft_printf("marco comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
+	val1 = printf("Real char:\t%c\n", 'c');
+	val2 = ft_printf("marc char:\t%c\n", 'c');
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real str:\t%s\n", "hola");
+	val2 = ft_printf("marc str:\t%s\n", "hola");
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real ptr:\t%p\n", str);
+	val2 = ft_printf("marc ptr:\t%p\n", str);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real +d:\t%d\n", 123);
+	val2 = ft_printf("marc +d:\t%d\n", 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real -d:\t%d\n", -123);
+	val2 = ft_printf("marc -d:\t%d\n", -123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real +i:\t%i\n", 123);
+	val2 = ft_printf("marc +i:\t%i\n", 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real -i:\t%i\n", -123);
+	val2 = ft_printf("marc -i:\t%i\n", -123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real +u:\t%u\n", 123);
+	val2 = ft_printf("marc +u:\t%u\n", 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real -u:\t%u\n", -123);
+	val2 = ft_printf("marc -u:\t%u\n", -123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real hex:\t%x\n", 123);
+	val2 = ft_printf("marc hex:\t%x\n", 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real HEX:\t%X\n", 123);
+	val2 = ft_printf("marc HEX:\t%X\n", 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real por:\t%%\n");
+	val2 = ft_printf("marc por:\t%%\n");
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n\n", val1, val2);
+	val1 = printf("Real comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
+	val2 = ft_printf("marc comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
+	printf("Val1:\t\t%d\nVal2:\t\t%d\n", val1, val2);
 	return (0);
 }*/
