@@ -6,7 +6,7 @@
 /*   By: marco-fe <marco-fe@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:48:11 by marco-fe          #+#    #+#             */
-/*   Updated: 2023/08/02 12:37:22 by marco-fe         ###   ########.fr       */
+/*   Updated: 2023/08/02 13:15:05 by marco-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,36 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (len);
 }
+/*
+int	main(void)
+{
+	char	*str = "Hola";
+
+	printf("Real char:\t%c\n", 'c');
+	ft_printf("marco char:\t%c\n", 'c');
+	printf("Real str:\t%s\n", "hola");
+	ft_printf("marco str:\t%s\n", "hola");
+	printf("Real ptr:\t%p\n", str);
+	ft_printf("marco ptr:\t%p\n", str);
+	printf("Real +d:\t%d\n", 123);
+	ft_printf("marco +d:\t%d\n", 123);
+	printf("Real -d:\t%d\n", -123);
+	ft_printf("marco -d:\t%d\n", -123);
+	printf("Real +i:\t%i\n", 123);
+	ft_printf("marco +i:\t%i\n", 123);
+	printf("Real -i:\t%i\n", -123);
+	ft_printf("marco -i:\t%i\n", -123);
+	printf("Real +u:\t%u\n", 123);
+	ft_printf("marco +u:\t%u\n", 123);
+	printf("Real -u:\t%u\n", -123);
+	ft_printf("marco -u:\t%u\n", -123);
+	printf("Real hex:\t%x\n", 123);
+	ft_printf("marco hex:\t%x\n", 123);
+	printf("Real HEX:\t%X\n", 123);
+	ft_printf("marco HEX:\t%X\n", 123);
+	printf("Real por:\t%%\n");
+	ft_printf("marco por:\t%%\n");
+	printf("Real comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
+	ft_printf("marco comb:\tchar: %c, str: %s, int: %i\n", 'c', str, 123);
+	return (0);
+}*/
